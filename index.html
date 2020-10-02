@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+  
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
+  
+    <script>
+
+
+      $(document).ready(function() {
+        var now = moment().format('MMMM Do YYYY, h:mm:ss a');
+           var NowTimeEl = $(".display-3").append("<h1>"+"Your current time is: " + now +"</h1>")
+
+           var Workinghours = ["9 AM", "10 AM", "11 AM", "Noon", "1 PM", "2 PM ", "3 PM ", "4 PM"]
+
+           for (var i = 0; i < Workinghours.length; i++) {
+            var WorkingBlock =  $(".container").append("<h1></h1>").addClass("time-block hour").append(Workinghours[i])                         
+            var saveBtn =  $(".container").append("<button>Save</button>").addClass("saveBtn")
+
+          }; 
+
+           $(".time-block hour").on("click", function() {
+
+             alert("I`m here!!")
+           });
+
+         
+          
+          
+      });
+    </script>
+
+
+
+  </body>
+</html>
